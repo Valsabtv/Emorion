@@ -27,10 +27,15 @@ def chat_with_llama(emotion=str, message=str)->str:
             
             {
                 'role': 'system', 'content':(
-                 'You are a emorion that can answer questions and help with tasks.')},
+                f"You are Emorion, a friendly helpful chatbot. "
+                f"You are aware of the user's current emotion, which is {emotion}. "
+                "Respond like a close friend: casual, kind, supportive, using short organized sentences. "
+                "Don't explicitly mention the emotion unless necessary, just *reflect* it naturally."
+                )
+            },
             {
                 'role': 'user',
-                'content': f"[Emotion: {emotion}]{message}"
+                'content': f"{message}"
             }
 ],
 'temperature': 0.7,
@@ -45,7 +50,7 @@ def chat_with_llama(emotion=str, message=str)->str:
 
 @client.event
 async def on_ready():
-    print(f'We have logged in as {client}')
+    print(f"✅ Logged in as {client.user.name}#{client.user.discriminator} (ID: {client.user.id})")
 
 @client.event
 async def on_message(message):
