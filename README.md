@@ -42,4 +42,5 @@ python Emorion.py
  
 ## Example Usage 💬
 Once the bot is running, you can start chatting with it on Discord. It will detect emotions in your messages and reply accordingly.
-
+ 
+#### (work in progress)
